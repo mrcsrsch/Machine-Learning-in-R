@@ -1,10 +1,11 @@
 ####################################################################################
+### OLS ###
 # Simple function to calculate OLS estimate and standard statistics         
 # that can handle formulas with interaction terms                            
 ####################################################################################
 
 ####################################################################################
-### function ###
+#### OLS function ####
 OLS <- function(formula, Data.frame){
   # function calculates OLS estimate, std. error, t-stat, p-value, F-stat and multiple R-squared
   # it can also handle interaction terms
@@ -69,7 +70,7 @@ OLS <- function(formula, Data.frame){
 }
 
 ####################################################################################
-### example: Boston data ###
+#### Example: Boston data ####
 
 # load data
 data("Boston", package = "MASS")

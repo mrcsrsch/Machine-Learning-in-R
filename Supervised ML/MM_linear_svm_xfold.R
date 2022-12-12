@@ -128,7 +128,7 @@ svm.xvalid  <- function(y, X, k, lambdas){
   return(result)
 }
 ###############################################################################
-#### Example: Predict AHD using Heart data ##### 
+#### Example: Heart data ##### 
 
 # load data
 Heart <- read.csv(file = paste0(map_data, "heart.csv"),

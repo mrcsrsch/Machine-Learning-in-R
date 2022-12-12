@@ -8,7 +8,7 @@
 map_data <- paste0(getwd(), "/Data/")
 
 ####################################################################################
-### function ###
+#### K-means function ####
 
 K_means <- function(mat, K, initial = NA){
   # mat: numeric data matrix
@@ -52,7 +52,7 @@ K_means <- function(mat, K, initial = NA){
 }
 
 ####################################################################################
-### example: cityweather ###
+### Example: cityweather ####
 # compare K_means function to built-in Kmeans function
 
 # load data

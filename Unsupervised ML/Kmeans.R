@@ -1,7 +1,11 @@
 ####################################################################################
-# Implementation of a simple k-means cluster algorithm    
+### Implementation of a simple k-means cluster algorithm  ####
 # see: Algorithm 14.1 in Hastie, Tibshirani & Friedman (2017): Elements of Statistical Learning  
 ####################################################################################
+
+#### Settings #### 
+# set path to data set
+map_data <- paste0(getwd(), "/Data/")
 
 ####################################################################################
 ### function ###
@@ -52,7 +56,7 @@ K_means <- function(mat, K, initial = NA){
 # compare K_means function to built-in Kmeans function
 
 # load data
-load(cityweather.RData)
+load(paste0(map_data, "cityweather.RData"))
 
 # run built-in function
 set.seed(42)

@@ -11,7 +11,6 @@ OLS <- function(formula, Data.frame){
   # formula: a formula in R formula style (y ~ x) 
   # Data.frame: a data frame 
   
-  copyDF <- Data.frame                                     # work with copied data frame
   vars <- as.vector(attr(terms(formula), "term.labels"))   # take independent variables out of formula
   vars <- c(as.vector(all.vars(formula))[1], vars)
   interact <- vars[grep(":", vars)]                        # extract interaction terms if there are any
@@ -20,10 +19,10 @@ OLS <- function(formula, Data.frame){
     for (i in seq_len(length(interact))){                  # loop through interactions and create vars
       dummy_vector <- sapply(strsplit(interact[i], ":"), "[", 1)
       dummy_vector[2] <- sapply(strsplit(interact[i], ":"), "[", 2)
-      copyDF[, paste(dummy_vector, collapse=":")] <- copyDF[, dummy_vector[1]] * copyDF[, dummy_vector[2]]
+      Data.frame[, paste(dummy_vector, collapse=":")] <- Data.frame[, dummy_vector[1]] * Data.frame[, dummy_vector[2]]
     }
   }
-  K <- data.matrix(copyDF[, vars])                         # convert final data.frame to matrix and select relevant subset
+  K <- data.matrix(Data.frame[, vars])                         # convert final data.frame to matrix and select relevant subset
   K <- na.omit(K)                                          # drop rows with missing observations 
   y <- K[, 1]                                              # get vector dep. var. y
   X <- cbind(1, K[, -1])                                   # get matrix indp. vars X and add constant 

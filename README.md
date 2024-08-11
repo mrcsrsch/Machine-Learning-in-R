@@ -1,2 +1,2 @@
 # Machine Learning in R
-In this repository, I implement some of the common machine learning algorithms from scratch in R. The implementations are to develop my own understanding of what happens under the "hood" in more efficient, packaged solutions. I hope they are helpful to others.
+I implement some common machine learning algorithms from scratch in R. While I hope that the implementations are helpful to other, they are largely exercises to enhance my own understanding of what happens under the “hood” in more efficient, packaged solutions. The algorithms are taken from academic papers and this book: Hastie, T., Tibshirani, R., & Friedman, J. (2017). The elements of statistical learning: data mining, inference, and prediction.

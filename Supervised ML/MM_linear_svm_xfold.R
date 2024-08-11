@@ -128,16 +128,16 @@ svm.xvalid  <- function(y, X, k, lambdas){
   return(result)
 }
 ###############################################################################
-#### Example: Heart data ##### 
+#### Example: heart data ##### 
 
 # load data
-Heart <- read.csv(file = paste0(map_data, "heart.csv"),
+heart <- read.csv(file = paste0(map_data, "heart.csv"),
                   header = TRUE, sep = ",")
 
 # clean data
-Heart <- na.omit(Heart)
-y <- ifelse(Heart$AHD=="Yes", 1, -1)
-X <- model.matrix(AHD ~ ., data = Heart)
+heart <- na.omit(heart)
+y <- ifelse(heart$AHD=="Yes", 1, -1)
+X <- model.matrix(AHD ~ ., data = heart)
 
 # extract separate training and testing sets
 set.seed(44)
